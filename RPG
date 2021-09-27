@@ -1,0 +1,30 @@
+import random
+
+class SimuladorDeDado:
+    def __init__(self):
+        self.valor_minimo = 1
+        self.valor_maximo = 20
+        self.mensagem = 'Quer rolar o d20 novamente?'
+
+    def Iniciar(self):
+        resposta = input(self.mensagem)
+        # noinspection PyBroadException
+        try:
+            if resposta == 'sim' or resposta == 's':
+                self.GerarVarDoDado()
+
+            elif resposta == 'não' or resposta == 'n':
+                print('Agradecemos sua participaçãao')
+
+            else:
+                print('Digite sim ou não')
+
+        except:
+            print('Ocorreu um erro, tente novamente')
+
+    def GerarValorDoDado(self):
+        print(random.randint(self.valor_minimo, self.valor_maximo))
+
+
+simulador = SimuladorDeDado()
+simulador.Iniciar()
